@@ -43,7 +43,7 @@ const PermissionsBox = ({changePermissions, title, userRole}: Props) => {
   };
 
   return (
-    <div className={styles.wrapper}>
+    <>
       <div className={styles.name}>{title}</div>
       <div className={classNames(styles.inner, {[styles.readonly]: !isCustomRole})}>
         {permissionsItems.map((key) => {
@@ -56,7 +56,7 @@ const PermissionsBox = ({changePermissions, title, userRole}: Props) => {
           );
         })}
       </div>
-    </div>
+    </>
   );
 };
 

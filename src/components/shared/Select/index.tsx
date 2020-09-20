@@ -1,5 +1,7 @@
-import React, {useState} from 'react';
+// libs
+import React, {FC, useState} from 'react';
 import classNames from 'classnames';
+// styles
 import styles from './styles.css';
 
 interface Select {
@@ -8,15 +10,16 @@ interface Select {
 }
 
 interface Props {
+  className: string;
   onSelect: Function;
   values: Select[];
 }
 
-const Select = ({values, onSelect}: Props) => {
+const Select: FC<Props> = ({className, values, onSelect}: Props) => {
   const [selectedOption, setSelectedOption] = useState(values[0]);
   const [isSelectOpen, setIsSelectOpen] = useState(false);
 
-  const onTriggerClickHandler = () => {
+  const onTriggerClickHandler = (): void => {
     setIsSelectOpen((prevIsSelectOpen) => !prevIsSelectOpen);
   };
 
@@ -27,7 +30,7 @@ const Select = ({values, onSelect}: Props) => {
   };
 
   return (
-    <div className={styles.wrapper}>
+    <div className={classNames(styles.wrapper, className)}>
       <div className={classNames(styles.select, {[styles.open]: isSelectOpen})}>
         <div className={styles.trigger} onClick={onTriggerClickHandler}>
           <span>{selectedOption.value}</span>

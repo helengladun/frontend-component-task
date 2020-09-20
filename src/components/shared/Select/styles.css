@@ -7,9 +7,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  border-width: 0 2px 0 2px;
-  border-style: solid;
-  border-color: #f5f5f5;
+  border: 1px solid var(--grey);
 }
 
 .trigger {
@@ -17,28 +15,21 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 22px;
-  font-size: 20px;
+  padding: 0 10px;
   font-weight: 300;
-  color: #3b3b3b;
-  height: 60px;
-  line-height: 60px;
-  background: #ffffff;
+  height: 30px;
   cursor: pointer;
-  border-width: 2px 0 2px 0;
-  border-style: solid;
-  border-color: #f5f5f5;
 }
 
 .options {
+  background: var(--white);
   position: absolute;
   display: block;
   top: 100%;
   left: 0;
   right: 0;
-  border: 2px solid #394a6d;
+  border: 2px solid var(--grey);
   border-top: 0;
-  background: #fff;
   transition: all 0.5s;
   opacity: 0;
   visibility: hidden;
@@ -49,27 +40,24 @@
 .option {
   position: relative;
   display: block;
-  padding: 0 22px 0 22px;
-  font-size: 22px;
+  padding: 5px 22px;
   font-weight: 300;
-  color: #3b3b3b;
-  line-height: 60px;
   cursor: pointer;
   transition: all 0.5s;
   &:hover {
     cursor: pointer;
-    background-color: #b2b2b2;
+    background-color: var(--grey);
   }
 }
 .option.selected {
-  color: #ffffff;
-  background-color: #305c91;
+  color: var(--white);
+  background-color: var(--dark-blue);
 }
 
 .arrow {
   position: relative;
-  height: 15px;
-  width: 15px;
+  height: 10px;
+  width: 10px;
   background: url('/materials/collapse-arrow.svg') no-repeat center center;
   background-size: cover;
   transition: all 0.5s;
