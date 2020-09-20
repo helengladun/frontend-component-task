@@ -1,6 +1,12 @@
 {
   "root": true,
-  "extends": [
-    "@shelf/eslint-config/typescript"
-  ]
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["react-hooks"],
+  "extends": ["@shelf/eslint-config/typescript", "plugin:react/recommended"]
 }

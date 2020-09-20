@@ -1,0 +1,44 @@
+@import '../../assets/styles/base/_colors.css';
+
+.inner {
+  background: var(--white);
+  padding: 15px 20px 0;
+}
+
+.section {
+  padding: 20px 0 12px;
+
+  &:not(:last-child) {
+    border-bottom: 2px solid var(--grey);
+  }
+}
+
+.button {
+  color: var(--white);
+  background: var(--orange);
+  border-radius: 2px;
+  font-size: 1.7rem;
+  font-weight: 600;
+  padding: 10px 78px;
+  text-transform: uppercase;
+  border: none;
+  margin-top: 40px;
+  outline: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.select-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.select {
+  max-width: 125px;
+}
+
+.select-title {
+  margin-right: 10px;
+}

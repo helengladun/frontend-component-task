@@ -1,0 +1,26 @@
+.title {
+  margin-bottom: 10px;
+}
+
+.inner {
+  display: flex;
+  position: relative;
+
+  &.readonly {
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      opacity: .5;
+      z-index: 1;
+    }
+  }
+}
+
+.checkbox-wrapper {
+  margin: 10px 20px 10px 0;
+}
