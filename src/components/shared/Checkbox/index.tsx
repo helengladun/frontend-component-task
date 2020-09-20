@@ -1,5 +1,7 @@
+// libs
 import React, {FC, useEffect, useState} from 'react';
 import classNames from 'classnames';
+// styles
 import styles from './styles.css';
 
 interface Props {
