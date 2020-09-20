@@ -1,0 +1,33 @@
+.checkbox {
+  display: flex;
+  align-items: center;
+}
+
+.box {
+  position: relative;
+  margin-right: 10px;
+  height: 15px;
+  width: 15px;
+
+  &.checked {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:before {
+      content: '';
+      background: url('/materials/check.svg') no-repeat center center;
+      background-size: cover;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 11px;
+      height: 11px;
+    }
+  }
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+}

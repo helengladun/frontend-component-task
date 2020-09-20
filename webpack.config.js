@@ -13,12 +13,34 @@ module.exports = {
       {test: /\.(js|jsx|ts|tsx)?$/, loader: 'babel-loader', exclude: /node_modules/},
       {
         test: /\.css$/,
-        loader: 'css-loader'
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[local]___[hash:base64:5]'
+              }
+            }
+          },
+          'postcss-loader'
+        ]
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'materials/'
+            }
+          }
+        ]
       }
     ]
   },
   resolve: {
-    modules: ['node_modules', 'src'],
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.json', '.css']
   },
   plugins: [
