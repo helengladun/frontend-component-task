@@ -1,5 +1,4 @@
 @import '../../assets/styles/base/_colors.css';
-@import-normalize;
 
 .container {
   background: var(--grey);
