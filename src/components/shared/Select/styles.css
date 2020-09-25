@@ -1,3 +1,5 @@
+@import '../../../assets/styles/base/_colors.css';
+
 .wrapper {
   position: relative;
   user-select: none;

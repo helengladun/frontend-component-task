@@ -10,24 +10,6 @@ module.exports = {
   target: 'web',
   module: {
     rules: [
-      {test: /\.(js|jsx|ts|tsx)?$/, loader: 'babel-loader', exclude: /node_modules/},
-      {
-        test: /\.css$/,
-        exclude: /node_modules/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              import: true,
-              modules: {
-                localIdentName: '[local]___[hash:base64:5]'
-              }
-            }
-          },
-          'postcss-loader'
-        ]
-      },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
         use: [
@@ -35,6 +17,40 @@ module.exports = {
             loader: 'file-loader',
             options: {
               outputPath: 'materials/'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(js|jsx|ts|tsx)?$/,
+        exclude: /node_modules/,
+        use: {loader: 'babel-loader'}
+      },
+      {
+        test: /\.css$/i,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: {
+                localIdentName: '[local]___[hash:base64:5]'
+              }
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                plugins: [
+                  'postcss-custom-properties',
+                  'postcss-preset-env',
+                  'postcss-nested',
+                  'postcss-normalize'
+                ]
+              }
             }
           }
         ]
